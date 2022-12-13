@@ -5,10 +5,15 @@ public class Linked {
     public static class Node {
         int value;
         Node next;
+
+
         Node(int value){
             this.value = value;
             this.next = null;
         }
+
+        
+        
     }
 
     public static void printfLinkList(Node head)
@@ -32,14 +37,34 @@ public class Linked {
     }
 
     public static Node addToHead(Node headNode,int value) {
-        Node node = new Node(value);
-        while (headNode.next != null)
+        Node Headnode = new Node(value);
+        if (headNode.next != null)
         {
-            node.next = headNode;
+            Headnode.next = headNode;
         }
 
-        return null;
+        return Headnode;
  
+    }
+
+    private static Node addToTail(Node heaNode, int value) {
+
+        Node newNode = new Node(value);
+        
+        if (heaNode == null)
+        {
+            return newNode;
+        }
+        else{
+            Node lastNode = heaNode;
+            while (lastNode.next != null)
+            {
+                lastNode = lastNode.next; 
+            }
+            lastNode.next = newNode;
+        }
+
+        return heaNode;
     }
 
     public static void main(String[] args) {
@@ -49,9 +74,14 @@ public class Linked {
 
         n1.next = n2;
         n2.next = n3;
-      
+
         printfLinkList(n1);
-        Node newlist = addToHead(n1, 0);
+        Node newlist = addToHead(n1, 5);
         printfLinkList(newlist);
+
+        Node newlist1 = addToTail(n1, 9);
+        printfLinkList(newlist1);
     }
+
+   
 }
