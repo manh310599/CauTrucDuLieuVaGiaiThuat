@@ -6,7 +6,7 @@ package sorting;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int [] a = {9,7,8,5,6,4,1,3,2};
+        int [] a = {5,3,8,4,6};
         SapXep(a);
         
 
